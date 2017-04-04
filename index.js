@@ -2,12 +2,12 @@
 
 const memoize = (func) => {
     const mem = {}
-    return (arg) => {
-        if (!mem[arg]) {
-            console.log('called for ', arg)
-            mem[arg] = func(arg)
+    return (...args) => {
+        const key = String(args)
+        if (!mem[key]) {
+            mem[key] = func(...args)
         }
-        return mem[arg]
+        return mem[key]
     }
 }
 
