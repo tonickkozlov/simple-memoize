@@ -1,5 +1,4 @@
 const test = require('tape')
-const sinon = require('sinon')
 
 const memoize = require('./index.js')
 
@@ -59,7 +58,7 @@ test('multi-param memoization', t => {
 
     t.equal(callCount, 6)
 
-    callCount = 0;
+    callCount = 0
     targetFunc = memoize(targetFunc)
     targetFunc(1, 2, 3)
     targetFunc(1, 2, 3)
